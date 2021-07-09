@@ -1,0 +1,12 @@
+.grade-card {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 14px 0;
+    border-radius: 5px;
+    background-color: rgba(26, 72, 110, 0.13);;
+    padding: 20px 50px;
+    color: #363F5F;
+    font-size: 20px;
+  }
+}

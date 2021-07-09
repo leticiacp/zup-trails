@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Montserrat:wght@400;600;700&display=swap');
+
+figure {
+  margin: 0;
+}
+.trails {
+  background-color: #0c3455;
+  padding: 0 100px;
+  min-height: 100vh;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    line-height: 27px;
+    color: #ffffff;
+    font-size: 22px;
+  }
+
+  &__user-icon {
+    margin-left: 24px;
+  }
+
+  &__banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1240px;
+  }
+
+  &__logo {
+    width: 300px;
+    color: white;
+  }
+
+  &__company-name {
+    font-size: 128px;
+    font-weight: 700;
+  }
+
+  &__page-title {
+    position: relative;
+    top: -40px;
+    text-align: right;
+    font-family: Acme;
+    font-size: 78px;
+  }
+}
+
+.modal {
+  &__title {
+    margin: 0;
+    line-height: 156px;
+    font-size: 128px;
+    font-weight: 600;
+  }
+
+  &__description {
+    margin: 20px 0;
+    line-height: 34px;
+    font-size: 28px;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
