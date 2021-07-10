@@ -14,6 +14,7 @@ const Card: React.FC<cardProps> = (props) => {
   const onClick = () => {
     window.dispatchEvent(new CustomEvent('request-trail', {detail: id}));
   };
+
   return (
     <article className="card__item">
       <header className="card__header">
@@ -24,7 +25,7 @@ const Card: React.FC<cardProps> = (props) => {
       <p className="card__description">{description}</p>
       </div>
       <footer className="card__footer">
-        <Button className="card__button" label="detalhes" onClick={onClick}/>
+        <Button className="card__button" label="detalhes" ariaLabel={`Mais detalhes da ${name}`} onClick={onClick}/>
       </footer>
   
     </article>

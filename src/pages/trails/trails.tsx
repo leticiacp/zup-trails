@@ -105,6 +105,7 @@ class TrailsPage extends PureComponent<TrailsState> {
     let selectedTrail = this.state.trails.find((trail) => trail.id === id);
     const disableSubscribe = userSubscriptions.includes(parseInt(selectedTrail!.id)) ?? false;
     this.setState({selectedTrail, selectedGrade: grades[id],modalOpened: true, disableSubscribe});
+    document.getElementById('subscribeButton')?.focus();
   };
 
   handleSubscribeClick() {
@@ -114,7 +115,6 @@ class TrailsPage extends PureComponent<TrailsState> {
     subscriptions.push(parseInt(selectedTrail.id));
     this.closeDialog();
   }
-
   render() {
     const {trails, modalOpened, selectedTrail, selectedGrade, userSubscriptions, disableSubscribe} = this.state;
     const {description, name} = selectedTrail;
@@ -133,7 +133,7 @@ class TrailsPage extends PureComponent<TrailsState> {
                 <div className="trails__page-title"> trails </div>
               </div>
               <figure>
-                <img src={trailsImage} alt="imagem de pessoas trabalhando com um notebook" />
+                <img className="trails__banner-image" src={trailsImage} alt="imagem de pessoas trabalhando com um notebook" />
               </figure>
             </div>
             <nav className="trails__nav">
@@ -142,10 +142,10 @@ class TrailsPage extends PureComponent<TrailsState> {
           </section>
         </div>
         {modalOpened ? <Modal opened={modalOpened}>
-          <h1 className="modal__title">{name}</h1>
-          <p className="modal__description">{description}</p>
+          <h1 id="dialogTitle" className="modal__title">{name}</h1>
+          <p  className="modal__description">{description}</p>
           <div className="modal__button-container">
-            <Button label="inscrever-se" disabled={disableSubscribe} onClick={() => this.handleSubscribeClick()}/>
+            <Button id="subscribeButton" className="modal__button" label="inscrever-se" disabled={disableSubscribe} onClick={() => this.handleSubscribeClick()}/>
           </div>
           <div className="modal__grade-container">
             {selectedGrade?.map((course, key) => {

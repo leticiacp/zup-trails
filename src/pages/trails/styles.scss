@@ -5,7 +5,7 @@ figure {
 }
 .trails {
   background-color: #0c3455;
-  padding: 0 100px;
+  padding: 12px 20px;
   min-height: 100vh;
 
   &__header {
@@ -23,10 +23,15 @@ figure {
 
   &__banner {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1240px;
+  }
+
+  &__banner-image {
+    width: 100%;
+    min-width: 320px;
   }
 
   &__logo {
@@ -51,19 +56,56 @@ figure {
 .modal {
   &__title {
     margin: 0;
-    line-height: 156px;
-    font-size: 128px;
+    line-height: 70px;
+    font-size: 56px;
     font-weight: 600;
   }
 
   &__description {
     margin: 20px 0;
-    line-height: 34px;
-    font-size: 28px;
+    line-height: 24px;
+    font-size: 20px;
   }
 
   &__button-container {
     display: flex;
     justify-content: flex-end;
+  }
+
+  &__button {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .trails {
+    padding: 12px 50px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .trails {
+    padding: 12px 100px;
+
+    &__banner {
+      flex-direction: row;
+      max-width: 1240px;
+    }
+  }
+
+  .modal {
+    &__title {
+      line-height: 156px;
+      font-size: 128px;
+    }
+  
+    &__description {
+      line-height: 34px;
+      font-size: 28px;
+    }
+
+    &__button {
+      width: fit-content;
+    }
   }
 }
