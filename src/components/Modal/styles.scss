@@ -4,13 +4,13 @@
 
 .modal {
   position: fixed;
-  top: calc(50% - 325px);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 1001;
   border: none;
-  border-radius: 8px;
-  padding: 20px 60px 30px;
-  width: 80%;
-  max-height: 600px;
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
 
@@ -24,6 +24,28 @@
     background: rgba(0, 0, 0, 0.55);
   }
 
-  &__content {
+  &__close-button {
+    border: none;
+    background-color: #FFFFFF;
+    padding-left: 40px;
+    font-family: Montserrat, sans-serif;
+    font-size: 36px;
+  }
+
+  &__header {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 800px) {
+  .modal {
+    top: calc(50% - 325px);
+    border-radius: 8px;
+    padding: 20px 60px 30px;
+    width: 80%;
+    max-height: 600px;
+
+    &--hide-desktop {
+      display: none;
+    }
   }
 }
